@@ -10,10 +10,10 @@
 
 ## 🌟 Key Features
 
-* [cite_start]**Intelligent Prediction:** Utilizes a `LogisticRegression` model with `class_weight="balanced"` to handle data distribution effectively.
-* [cite_start]**Automated Data Cleaning:** The system automatically fills missing values in the dataset with the column mean during the training phase.
-* [cite_start]**Input Guardrails:** Server-side validation ensures age inputs are between 0–120 and blood pressure readings are between 50–300.
-* [cite_start]**Dynamic UI:** Displays results with color-coded alerts—Red for "You have BP!" and Green for "You dont have BP!".
+**Intelligent Prediction:** Utilizes a `LogisticRegression` model with `class_weight="balanced"` to handle data distribution effectively.
+**Automated Data Cleaning:** The system automatically fills missing values in the dataset with the column mean during the training phase.
+**Input Guardrails:** Server-side validation ensures age inputs are between 0–120 and blood pressure readings are between 50–300.
+**Dynamic UI:** Displays results with color-coded alerts—Red for "You have BP!" and Green for "You dont have BP!".
 
 ---
 
@@ -32,6 +32,6 @@
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
-[cite_start]Ensure you have the following libraries installed:
+Ensure you have the following libraries installed:
 ```bash
 pip install flask pandas numpy scikit-learn
