@@ -4,7 +4,8 @@
 ![Flask](https://img.shields.io/badge/framework-Flask-lightgrey.svg)
 ![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange.svg)
 
-[cite_start]An intuitive web application that leverages **Logistic Regression** to predict high blood pressure based on user demographics and vitals. [cite_start]Built with a Flask backend and a responsive frontend, this project demonstrates a complete end-to-end Machine Learning pipeline.
+An intuitive web application that leverages **Logistic Regression** to predict high blood pressure based on user demographics and vitals. 
+Built with a Flask backend and a responsive frontend, this project demonstrates a complete end-to-end Machine Learning pipeline.
 
 ---
 
