@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Predictor</title>
+        <style>
+            body{
+                background: #5f6273;
+                font-family: Arial, sans-serif;
+
+            }
+            #form{
+                max-width: 400px;
+                background: rgba(0, 0, 0, 0.4);
+                border-radius: 15px;
+                margin: 40px auto;
+                text-align: center;
+                padding: 15px;
+            }
+            #form input[type="text"]{
+                outline: none;
+                border-radius: 10px;
+            }
+            #form input[type="submit"]{
+                border: none;
+                border-radius: 8px;
+
+            }
+
+            #result{
+                background-color: rgba(0, 0, 0, 0.4);
+                border-radius: 12px;
+                text-align: center;
+                overflow-x: auto;
+                overflow-y: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center">Test If You Have Blood Pressure!</h1>
+        <div id="form">
+            <form method="POST">
+                <input type = "text" name="age" placeholder="Age"> <br><br>
+                <input type = "text" name="blood_pressure" placeholder="Blood Pressure"> <br><br>
+                <input type="submit" id = "sub" value="Result">
+            </form>
+        </div>
+        <br>
+        {% if prediction%}
+            <div id="result">
+                {%if prediction == "yes"%}
+                    <p style="color:red">Report: You have BP!</p>
+                {%elif prediction == "no"%}
+                    <p style="color:green">Report: You dont have BP!</p>
+                {%endif%}
+            </div>
+        {% endif %}
+        
+        {% if error=="ageinv" %}
+            <script>alert("invalid age!")</script>
+        {%elif error=="bpinv" %}
+            <script>alert("invalid blood pressure!")</script>
+        {%endif%}
+    </body>
+</html>
