@@ -21,11 +21,11 @@
 
 | Component | Technology |
 | :--- | :--- |
-| **Language** | [cite_start]Python 3.x  |
-| **Web Framework** | [cite_start]Flask  |
-| **Data Analysis** | [cite_start]Pandas, NumPy  |
-| **Machine Learning** | [cite_start]Scikit-Learn  |
-| **Frontend** | [cite_start]HTML5, CSS3, Jinja2  |
+| **Language** | Python 3.x  |
+| **Web Framework** | Flask  |
+| **Data Analysis** | Pandas, NumPy  |
+| **Machine Learning** | Scikit-Learn  |
+| **Frontend** | HTML5, CSS3, Jinja2  |
 
 ---
 
