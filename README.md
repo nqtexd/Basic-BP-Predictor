@@ -1,38 +1,115 @@
-# 🩺 BP-Predictor: ML-Powered Health Insight
+# 🩺 Blood Pressure Risk Predictor
 
-![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
-![Flask](https://img.shields.io/badge/framework-Flask-lightgrey.svg)
-![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange.svg)
-
-An intuitive web application that leverages **Logistic Regression** to predict high blood pressure based on user demographics and vitals. 
-Built with a Flask backend and a responsive frontend, this project demonstrates a complete end-to-end Machine Learning pipeline.
+A lightweight machine learning web application built with **Flask** and **Scikit-learn** that predicts whether a person is at risk of high blood pressure based on their **age** and **blood pressure reading**.
 
 ---
 
-## 🌟 Key Features
+## 🚀 Demo
 
-**Intelligent Prediction:** Utilizes a `LogisticRegression` model with `class_weight="balanced"` to handle data distribution effectively.
-**Automated Data Cleaning:** The system automatically fills missing values in the dataset with the column mean during the training phase.
-**Input Guardrails:** Server-side validation ensures age inputs are between 0–120 and blood pressure readings are between 50–300.
-**Dynamic UI:** Displays results with color-coded alerts—Red for "You have BP!" and Green for "You dont have BP!".
+> Enter your age and blood pressure value — the model instantly tells you if you're at risk.
 
----
-
-## 🛠️ Technology Stack
-
-| Component | Technology |
-| :--- | :--- |
-| **Language** | Python 3.x  |
-| **Web Framework** | Flask  |
-| **Data Analysis** | Pandas, NumPy  |
-| **Machine Learning** | Scikit-Learn  |
-| **Frontend** | HTML5, CSS3, Jinja2  |
+| Input | Valid Range |
+|---|---|
+| Age | 0 – 120 |
+| Blood Pressure (mmHg) | 50 – 300 |
 
 ---
 
-## 🚀 Getting Started
+## 🧠 How It Works
 
-### 1. Prerequisites
-Ensure you have the following libraries installed:
+1. On startup, a **Logistic Regression** model is trained on `data.csv` (501 labeled records).
+2. Missing values are imputed using column means.
+3. Class imbalance is handled via `class_weight="balanced"`.
+4. A user submits Age + Blood Pressure via a web form.
+5. The model returns a binary prediction: **"You have BP"** or **"You don't have BP"**.
+
+```
+User Input → Validation → Logistic Regression Model → Prediction Result
+```
+
+---
+
+## 🗂️ Project Structure
+
+```
+prediction/
+├── main.py              # Flask app + ML model training & prediction
+├── data.csv             # Training dataset (501 samples)
+└── templates/
+    └── index.html       # Jinja2 frontend template
+```
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Web Framework | Flask |
+| Machine Learning | Scikit-learn (Logistic Regression) |
+| Data Processing | Pandas, NumPy |
+| Frontend | HTML, CSS, Jinja2 |
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+Make sure you have **Python 3.8+** installed.
+
+### 1. Clone the Repository
+
 ```bash
-pip install flask pandas numpy scikit-learn
+git clone https://github.com/nqtexd/Basic-BP-Predictor.git
+cd Basic-BP-Predictor
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install flask scikit-learn pandas numpy
+```
+
+### 3. Run the App
+
+```bash
+python main.py
+```
+
+The server will start at **`http://127.0.0.1:5000`**
+
+> **Note:** The CSV path in `main.py` is set to `prediction/data.csv`. If you're running from inside the `prediction/` folder, update line 31 to just `"data.csv"`.
+
+---
+
+## 📊 Dataset
+
+The training data (`data.csv`) contains **501 records** with the following columns:
+
+| Column | Description |
+|---|---|
+| `age` | Patient's age (integer) |
+| `blood_pressure` | Systolic blood pressure reading (integer) |
+| `result` | `1` = has BP, `0` = no BP |
+
+---
+
+## ✅ Input Validation
+
+The app validates all user input before making a prediction:
+
+- **Age** must be between `0` and `120` — otherwise an alert is shown.
+- **Blood Pressure** must be between `50` and `300` — otherwise an alert is shown.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Author
+
+Made with ❤️ by **[Your Name](https://github.com/your-username)**
