@@ -112,4 +112,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ## 🙋‍♂️ Author
 
-Made with ❤️ by **[Your Name](https://github.com/your-username)**
+Made with ❤️ by **[nqtexd](https://github.com/nqtexd)**
